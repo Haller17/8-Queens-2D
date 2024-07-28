@@ -10,20 +10,20 @@ int main() {
   if (c == 8) // Checks to see your inbounds
   goto print; 
 
-  r = -1; // So you can pickup where you left off. + Make sure's to                check the top row. cuz r++ will skip Row 0, and go                    straight to Row 1, without checking Row 0.
+  r = -1; // So you can pickup where you left off. + Make sure's to check the top row. cuz r++ will skip Row 0, and go straight to Row 1, without checking Row 0.
 
   Nr: r++; // Move to the next row
   if (r == 8) // Checks to see your inbounds
-    goto backtrack; // If you are inbounds, you can move on to the                           next row.
+    goto backtrack; // If you are inbounds, you can move on to the next row.
 
   // Row test
-  for (int i = 0; i < c; i++) // i goes across the columns, you wanna                                  go uo to but not including C                                          (Current collumm)
+  for (int i = 0; i < c; i++) // i goes across the columns, you wanna go uo to but not including C (Current collumm)
     if (b[r][i] == 1)
       goto Nr;
 
   // Up Diagnol test 
   for (int i = 1; (r - i) >= 0 && (c - i) >= 0; i++) 
-    //Condition: (r - i) >= 0 && (c - i) >= 0: make sure to stay in       bounds. AND As i gets higher, the more you are subtracting by,        the more you are going up and to the left.
+    //Condition: (r - i) >= 0 && (c - i) >= 0: make sure to stay in bounds. AND As i gets higher, the more you are subtracting by,the more you are going up and to the left.
 
     if (b[r - i][c - i] == 1)
       goto Nr;
@@ -39,12 +39,12 @@ int main() {
   
   // Backtracking
   backtrack: c--; // Goes back a column.
-  if (c == -1) // If you are out of bounds, program hits return 0 and                   your done.
-    return 0; // Becuase the code will hit out of bounds, so once you                 hit "out" your done with the program.
+  if (c == -1) // If you are out of bounds, program hits return 0 and your done.
+    return 0; // Becuase the code will hit out of bounds, so once you hit "out of bounds" your done with the program.
 
   r = 0; // Starts at top Row, and goes down.
   
-  while (b[r][c] != 1) // While the queen is NOT in the current                                 collumm
+  while (b[r][c] != 1) // While the queen is NOT in the current collumm
     
     r++; // Goes down a row.
 
