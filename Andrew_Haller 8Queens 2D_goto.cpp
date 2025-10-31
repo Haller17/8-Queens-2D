@@ -23,7 +23,7 @@ int main() {
 
   // Up Diagnol test 
   for (int i = 1; (r - i) >= 0 && (c - i) >= 0; i++) 
-    //Condition: (r - i) >= 0 && (c - i) >= 0: make sure to stay in bounds. AND As i gets higher, the more you are subtracting by,the more you are going up and to the left.
+    //Condition: make sure to stay in bounds. AND As i gets higher, the more you are subtracting by,the more you are going up and to the left.
 
     if (b[r - i][c - i] == 1)
       goto Nr;
